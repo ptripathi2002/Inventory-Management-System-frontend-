@@ -11,7 +11,7 @@ export const validateEmail = (email) => {
 export const registerUser = async (userData) => {
   try {
     const response = await axios.post(
-      `${BACKEND_URL}api/users/register`,
+      `${BACKEND_URL}/api/users/register`,
       userData,
       { withCredentials: true }
     );
@@ -35,7 +35,7 @@ export const registerUser = async (userData) => {
 export const loginUser = async (userData) => {
   try {
     const response = await axios.post(
-      `${BACKEND_URL}api/users/login`,
+      `${BACKEND_URL}/api/users/login`,
       userData,
       { withCredentials: true }
     );
@@ -58,7 +58,7 @@ export const loginUser = async (userData) => {
 
 export const logoutUser = async () => {
   try {
-    await axios.get(`${BACKEND_URL}api/users/logout`);
+    await axios.get(`${BACKEND_URL}/api/users/logout`);
   } catch (error) {
     const message =
       (error.response && error.response.data && error.response.data.message) ||
@@ -74,7 +74,7 @@ export const logoutUser = async () => {
 export const forgotPassword = async (userData) => {
   try {
     const response = await axios.post(
-      `${BACKEND_URL}api/users/forgotPassword`,
+      `${BACKEND_URL}/api/users/forgotPassword`,
       userData
     );
 
@@ -94,7 +94,7 @@ export const forgotPassword = async (userData) => {
 export const resetPassword = async (userData, resetToken) => {
   try {
     const response = await axios.put(
-      `${BACKEND_URL}api/users/resetPassword/${resetToken}`,
+      `${BACKEND_URL}/api/users/resetPassword/${resetToken}`,
       userData
     );
     return response.data;
@@ -113,7 +113,7 @@ export const resetPassword = async (userData, resetToken) => {
 
 export const getLoginStatus = async (userData, resetToken) => {
   try {
-    const response = await axios.get(`${BACKEND_URL}api/users/loggedIn`);
+    const response = await axios.get(`${BACKEND_URL}/api/users/loggedIn`);
 
     return response.data;
   } catch (error) {
@@ -128,7 +128,7 @@ export const getLoginStatus = async (userData, resetToken) => {
 //Get User Profile
 export const getUser = async () => {
   try {
-    const response = await axios.get(`${BACKEND_URL}api/users/getUser`);
+    const response = await axios.get(`${BACKEND_URL}/api/users/getUser`);
 
     return response.data;
   } catch (error) {
@@ -145,7 +145,7 @@ export const getUser = async () => {
 export const updateUser = async (formData) => {
   try {
     const response = await axios.patch(
-      `${BACKEND_URL}api/users/updateUser`,
+      `${BACKEND_URL}/api/users/updateUser`,
       formData
     );
     return response.data;
@@ -163,7 +163,7 @@ export const updateUser = async (formData) => {
 export const changePassword = async (formData) => {
   try {
     const response = await axios.patch(
-      `${BACKEND_URL}api/users/changePassword`,
+      `${BACKEND_URL}/api/users/changePassword`,
       formData
     );
     return response.data;
