@@ -44,7 +44,7 @@ const ProductDetail = () => {
         {isLoading && <SpinnerImg />}
         {product && (
           <div className="detail">
-            <Card cardClass="group">
+            <Card cardClass="image-preview">
               {product?.image ? (
                 <img
                   src={product.image.filePath}
